@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const WORDPRESS_URL = 'https://fattorebakery.it';
+// Usa la stessa configurazione di wordpress.ts
+const WORDPRESS_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://admin.fattorebakery.it';
 const WP_API_USERNAME = process.env.WP_API_USERNAME;
 const WP_API_PASSWORD = process.env.WP_API_PASSWORD;
 

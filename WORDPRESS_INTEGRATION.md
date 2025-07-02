@@ -6,7 +6,7 @@ Questo documento descrive l'integrazione tra il frontend Next.js di Fattore Bake
 
 ### Opzione 1: WordPress su Sottodominio (CONSIGLIATA)
 - **Frontend Next.js**: `https://fattorebakery.it` (sito principale)
-- **Backend WordPress**: `https://wp.fattorebakery.it` (admin e API)
+- **Backend WordPress**: `https://admin.fattorebakery.it` (admin e API)
 
 ### Opzione 2: Configurazione Attuale
 - **WordPress + Next.js**: `https://fattorebakery.it` (configurazione ibrida)
@@ -17,7 +17,7 @@ Crea un file `.env.local` nella root del progetto:
 
 ```env
 # WordPress Configuration
-NEXT_PUBLIC_WORDPRESS_URL=https://wp.fattorebakery.it
+NEXT_PUBLIC_WORDPRESS_URL=https://admin.fattorebakery.it
 
 # WordPress API Credentials (per Contact Form 7 e operazioni autenticate)
 WP_API_USERNAME=your_wp_username
@@ -96,7 +96,7 @@ Dove `${WORDPRESS_URL}` è configurabile tramite variabile d'ambiente.
 - Clicca su un articolo per leggerlo completo
 
 ### Aggiungere contenuto:
-1. Accedi al backend WordPress su `${WORDPRESS_URL}/wp-admin` (es. https://wp.fattorebakery.it/wp-admin)
+1. Accedi al backend WordPress su `${WORDPRESS_URL}/wp-admin` (es. https://admin.fattorebakery.it/wp-admin)
 2. Crea nuovi post nella sezione "Articoli"
 3. Aggiungi immagini featured per una migliore presentazione
 4. I contenuti appariranno automaticamente sul sito Next.js
@@ -136,13 +136,13 @@ Gli stili per i contenuti del blog sono in `src/app/globals.css` nella sezione "
 ### Passaggi per spostare WordPress su sottodominio:
 
 1. **Backup completo**: Crea un backup del sito WordPress
-2. **Configurazione DNS**: Crea un record A o CNAME per `wp.fattorebakery.it`
+2. **Configurazione DNS**: Crea un record A o CNAME per `admin.fattorebakery.it`
 3. **Spostamento WordPress**: 
    - Installa WordPress sul nuovo sottodominio
    - Ripristina il backup
    - Aggiorna le URL nelle impostazioni WP (`wp-admin/options-general.php`)
 4. **Configurazione Next.js**:
-   - Crea il file `.env.local` con `NEXT_PUBLIC_WORDPRESS_URL=https://wp.fattorebakery.it`
+   - Crea il file `.env.local` con `NEXT_PUBLIC_WORDPRESS_URL=https://admin.fattorebakery.it`
    - Testa che le API funzionino correttamente
 5. **Deploy del frontend**: Carica il frontend Next.js su `https://fattorebakery.it`
 6. **Verifica**: Controlla che blog, form e tutte le funzionalità funzionino
