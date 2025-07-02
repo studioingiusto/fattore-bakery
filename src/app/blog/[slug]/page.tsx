@@ -2,11 +2,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getMedia, stripHtml, formatDate } from "@/lib/wordpress";
+import type { Metadata } from "next";
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+  
+  if (!post) {
+    return {
+      title: "Post non trovato | Fattore F Blog",
+      description: "Il post che stai cercando non è stato trovato."
+    };
+  }
+
+  const title = stripHtml(post.title.rendered);
+  const excerpt = stripHtml(post.excerpt.rendered);
+  const description = excerpt.length > 160 
+    ? excerpt.substring(0, 157) + "..." 
+    : excerpt;
+
+  let ogImage = "https://fattoref.com/wp-content/uploads/2023/10/fattore-f-bakery-scaled.jpg"; // default image
+  
+  if (post.featured_media) {
+    const media = await getMedia(post.featured_media);
+    if (media) {
+      ogImage = media.source_url;
+    }
+  }
+
+  return {
+    title: `${title} | Blog Fattore F - Bakery Vicenza`,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      images: [ogImage],
+      type: "article",
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: [ogImage],
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

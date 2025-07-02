@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getPosts, getMedia, stripHtml, formatDate, WordPressPost } from "@/lib/wordpress";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog Fattore F - Ricette, Consigli e Segreti della Panificazione | Bakery Vicenza",
+  description: "Scopri i segreti della panificazione artigianale nel blog di Fattore F. Ricette, consigli professionali e tecniche per pizza, pane e lievitati. La miglior pizzeria di Vicenza condivide la sua esperienza.",
+};
 
 interface BlogPostWithMedia extends WordPressPost {
   featuredImage?: {
