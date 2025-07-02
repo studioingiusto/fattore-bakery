@@ -1,4 +1,5 @@
-const WORDPRESS_URL = 'https://fattorebakery.it';
+// Configurazione flessibile per diversi ambienti
+const WORDPRESS_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://admin.fattorebakery.it';
 const API_BASE = `${WORDPRESS_URL}/wp-json/wp/v2`;
 
 // API Credentials - DA CONFIGURARE in .env.local

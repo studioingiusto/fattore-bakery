@@ -1,6 +1,28 @@
 # Integrazione WordPress - Fattore Bakery
 
-Questo documento descrive l'integrazione tra il frontend Next.js di Fattore Bakery e il backend WordPress su https://fattorebakery.it/.
+Questo documento descrive l'integrazione tra il frontend Next.js di Fattore Bakery e il backend WordPress.
+
+## Configurazione Domini
+
+### Opzione 1: WordPress su Sottodominio (CONSIGLIATA)
+- **Frontend Next.js**: `https://fattorebakery.it` (sito principale)
+- **Backend WordPress**: `https://wp.fattorebakery.it` (admin e API)
+
+### Opzione 2: Configurazione Attuale
+- **WordPress + Next.js**: `https://fattorebakery.it` (configurazione ibrida)
+
+## Variabili d'Ambiente
+
+Crea un file `.env.local` nella root del progetto:
+
+```env
+# WordPress Configuration
+NEXT_PUBLIC_WORDPRESS_URL=https://wp.fattorebakery.it
+
+# WordPress API Credentials (per Contact Form 7 e operazioni autenticate)
+WP_API_USERNAME=your_wp_username
+WP_API_PASSWORD=your_wp_application_password
+```
 
 ## Struttura dell'integrazione
 
@@ -60,10 +82,12 @@ Componente che integra Contact Form 7:
 
 ### Endpoint utilizzati:
 
-- `GET /wp-json/wp/v2/posts` - Lista post
-- `GET /wp-json/wp/v2/posts?slug={slug}` - Post singolo
-- `GET /wp-json/wp/v2/media/{id}` - Immagini
-- `POST /wp-json/contact-form-7/v1/contact-forms/1/feedback` - Form contatti
+- `GET ${WORDPRESS_URL}/wp-json/wp/v2/posts` - Lista post
+- `GET ${WORDPRESS_URL}/wp-json/wp/v2/posts?slug={slug}` - Post singolo
+- `GET ${WORDPRESS_URL}/wp-json/wp/v2/media/{id}` - Immagini
+- `POST ${WORDPRESS_URL}/wp-json/contact-form-7/v1/contact-forms/1/feedback` - Form contatti
+
+Dove `${WORDPRESS_URL}` è configurabile tramite variabile d'ambiente.
 
 ## Come utilizzare
 
@@ -72,7 +96,7 @@ Componente che integra Contact Form 7:
 - Clicca su un articolo per leggerlo completo
 
 ### Aggiungere contenuto:
-1. Accedi al backend WordPress su https://fattorebakery.it/wp-admin
+1. Accedi al backend WordPress su `${WORDPRESS_URL}/wp-admin` (es. https://wp.fattorebakery.it/wp-admin)
 2. Crea nuovi post nella sezione "Articoli"
 3. Aggiungi immagini featured per una migliore presentazione
 4. I contenuti appariranno automaticamente sul sito Next.js
@@ -105,4 +129,28 @@ Gli stili per i contenuti del blog sono in `src/app/globals.css` nella sezione "
 
 - Tutti i contenuti HTML sono sanificati con `stripHtml()`
 - Il form utilizza validazione client e server-side
-- CORS configurato correttamente per le API WordPress 
+- CORS configurato correttamente per le API WordPress
+
+## Migrazione da WordPress Frontend a Next.js
+
+### Passaggi per spostare WordPress su sottodominio:
+
+1. **Backup completo**: Crea un backup del sito WordPress
+2. **Configurazione DNS**: Crea un record A o CNAME per `wp.fattorebakery.it`
+3. **Spostamento WordPress**: 
+   - Installa WordPress sul nuovo sottodominio
+   - Ripristina il backup
+   - Aggiorna le URL nelle impostazioni WP (`wp-admin/options-general.php`)
+4. **Configurazione Next.js**:
+   - Crea il file `.env.local` con `NEXT_PUBLIC_WORDPRESS_URL=https://wp.fattorebakery.it`
+   - Testa che le API funzionino correttamente
+5. **Deploy del frontend**: Carica il frontend Next.js su `https://fattorebakery.it`
+6. **Verifica**: Controlla che blog, form e tutte le funzionalità funzionino
+
+### Alternativa: Reverse Proxy (più complessa)
+
+Se preferisci mantenere tutto sullo stesso dominio:
+- Configura un reverse proxy (Nginx/Apache)
+- Next.js serve `/`, `/blog`, `/api` ecc.
+- WordPress accessibile solo su `/wp-admin` e `/wp-json`
+- Richiede configurazione server avanzata 
