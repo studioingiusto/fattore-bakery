@@ -373,12 +373,30 @@ export function formatDate(dateString: string): string {
 
 // Submit contact form (for Contact Form 7 integration) - COMPATIBILITY
 export async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
-  // Use the dynamic submit function with default form ID
-  const formData: Record<string, string> = {
-    'your-name': data.name,
-    'your-email': data.email,
-    'your-phone': data.phone || '',
-    'your-message': data.message,
-  };
-  return submitDynamicContactForm(formData, 14);
+  try {
+    // Use the local API route instead of calling WordPress directly
+    const formData: Record<string, string> = {
+      'your-name': data.name,
+      'your-email': data.email,
+      'your-phone': data.phone || '',
+      'your-message': data.message,
+    };
+
+    const response = await fetch('/api/contact-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        formData,
+        formId: 14,
+      }),
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    return { success: false, message: 'Errore di connessione. Riprova più tardi.' };
+  }
 } 

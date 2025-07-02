@@ -18,6 +18,10 @@ function getAuthHeaders(): HeadersInit {
   };
 }
 
+function hasWordPressCredentials(): boolean {
+  return !!(WP_API_USERNAME && WP_API_PASSWORD);
+}
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -70,6 +74,15 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { formData, formId = 14 } = body;
+    
+    // Check if WordPress credentials are configured
+    if (!hasWordPressCredentials()) {
+      console.warn('WordPress credentials not configured. Form submission will fail.');
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Form temporaneamente non disponibile. Contattaci direttamente a: info@fattoref.com o chiama Riccardo 340 56 09 752' 
+      });
+    }
     
     // Non impostiamo Content-Type per FormData - sarà gestito automaticamente
     const headers: HeadersInit = {

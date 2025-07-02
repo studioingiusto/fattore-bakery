@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DynamicContactForm from "@/components/DynamicContactForm";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -815,7 +815,7 @@ export default function Home() {
       </div>
 
       {/* Contact Form Section */}
-      <DynamicContactForm />
+      <ContactForm />
 
       {/* Footer */}
       <footer className="bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8">
