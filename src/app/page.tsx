@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export default function Home() {
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden pt-32">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -19,9 +19,9 @@ export default function Home() {
         </div>
 
         {/* Hero Text */}
-        <div className="relative z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+        <div className="relative z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8 pt-16">
           <h1
-            className="text-white text-center uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+            className="text-white text-center uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
             style={{
               fontFamily: '"Druk Wide", sans-serif',
               fontWeight: 700,
