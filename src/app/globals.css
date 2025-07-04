@@ -8,15 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-bogart: var(--font-bogart-sans);
+  --font-druk: var(--font-druk-text-cyr);
+  --font-druk-wide: var(--font-druk-wide-cyr);
 }
 
 html {
@@ -29,6 +23,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+h1, h3, h4, h5, h6 {
+  @apply font-druk-wide;
+}
+
+h2, a {
+  @apply font-druk;
+}
+
+p {
+  @apply font-bogart;
+}
+
 /* Blog content styling */
 .blog-content h1,
 .blog-content h2,
@@ -36,7 +44,7 @@ body {
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-  font-family: "Druk Text Cyr", sans-serif;
+  font-family: var(--font-druk-wide);
   font-weight: 500;
   color: #4e4e4e;
   margin-top: 2rem;

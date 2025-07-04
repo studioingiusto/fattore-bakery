@@ -20,16 +20,7 @@ export default function Home() {
 
         {/* Hero Text */}
         <div className="relative z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
-          <h1
-            className="text-white text-center uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-            style={{
-              fontFamily: '"Druk Wide", sans-serif',
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              lineHeight: "1.1",
-            }}
-          >
+          <h1 className=" text-white text-center uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             <span className="block">ALZA IL LIVELLO DEI</span>
             <span className="block">TUOI PANIFICATI</span>
           </h1>
@@ -54,36 +45,17 @@ export default function Home() {
         <div className="w-full bg-[#ffffff] flex flex-col justify-center p-4 sm:p-6 md:p-8 lg:p-12">
           <div className="max-w-3xl mx-auto md:mx-0">
             {/* Header */}
-            <h2
-              className="text-[#4e4e4e] font-bold mb-6 md:mb-8 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
-              style={{
-                fontFamily: '"Druk Text Cyr", sans-serif',
-                fontStyle: "normal",
-                fontWeight: 500,
-                letterSpacing: "0.07em",
-                textTransform: "uppercase",
-                lineHeight: "1.15",
-              }}
-            >
+            <h2 className="text-[#4e4e4e] font-medium mb-6 md:mb-8 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               COS&apos;È
               <br />
               FATTORE BAKERY
             </h2>
 
             {/* Body text */}
-            <div
-              className="text-[#4e4e4e] leading-relaxed mb-6 md:mb-8 space-y-3 md:space-y-4 text-lg sm:text-xl md:text-2xl lg:text-3xl"
-              style={{
-                color: "#4E4E4E",
-                fontFamily: "Bogart, sans-serif",
-                fontStyle: "normal",
-                fontWeight: 300,
-                lineHeight: "1.4",
-              }}
-            >
+            <div className="text-[#4e4e4e] leading-relaxed mb-6 md:mb-8 space-y-3 md:space-y-4 text-lg sm:text-xl md:text-2xl lg:text-3xl">
               <p>
-                Sei un&apos;attività che ha bisogno di alzare il livello dei suoi
-                lievitati?
+                Sei un&apos;attività che ha bisogno di alzare il livello dei
+                suoi lievitati?
               </p>
               <p>
                 Ti aiutiamo noi mettendo al tuo servizio i nostri lievitati!
@@ -93,15 +65,7 @@ export default function Home() {
             {/* Call to action button */}
             <a
               href="#contact-form"
-              className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
-              style={{
-                color: "#ffffff",
-                textAlign: "center",
-                fontFamily: '"Druk Text Cyr", sans-serif',
-                fontStyle: "normal",
-                fontWeight: 500,
-                lineHeight: "1.4",
-              }}
+              className="bg-[#b71918] text-[#ffffff] text-center px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
             >
               <span className="block sm:inline">
                 CONTATTACI PER LA CREAZIONE DEL
@@ -117,15 +81,7 @@ export default function Home() {
       {/* Awards Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h3
-            className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-            style={{
-              fontFamily: '"Druk Wide", sans-serif',
-              fontWeight: 400,
-              letterSpacing: "0.07em",
-              lineHeight: "1.16em",
-            }}
-          >
+          <h3 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="text-[#b71918]">FATTORE F</span>{" "}
             <span className="text-[#4e4e4e]">È STATA VOTATA COME</span>{" "}
             <span className="text-[#b71918]">
@@ -133,13 +89,7 @@ export default function Home() {
             </span>
           </h3>
 
-          <p
-            className="text-center font-bold mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto"
-            style={{
-              fontFamily: "Bogart, sans-serif",
-              lineHeight: "1.4",
-            }}
-          >
+          <p className="text-center font-bold mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto">
             <span className="text-[#4e4e4e]">
               Se cerchi qualcosa di più sartoriale,{" "}
             </span>
@@ -158,13 +108,7 @@ export default function Home() {
           </p>
 
           <div className="text-center mt-8 md:mt-12 lg:mt-16 max-w-4xl mx-auto">
-            <p
-              className="text-3xl font-bold mb-6 md:mb-8"
-              style={{
-                fontFamily: "Bogart, sans-serif",
-                lineHeight: "1.4",
-              }}
-            >
+            <p className="text-3xl font-bold mb-6 md:mb-8">
               <span className="text-[#4e4e4e]">FATTORE BAKERY </span>
               <span className="text-[#b71918]">
                 ti presenta una selezione dei suoi prodotti:
@@ -173,11 +117,11 @@ export default function Home() {
 
             <div
               className="text-3xl font-bold mb-6 md:mb-8 space-y-2"
-              style={{
-                fontFamily: "Bogart, sans-serif",
-                lineHeight: "1.4",
-                color: "#4e4e4e",
-              }}
+              // style={{
+              //   fontFamily: "Bogart, sans-serif",
+              //   lineHeight: "1.4",
+              //   color: "#4e4e4e",
+              // }}
             >
               <p>Pizza tonda al piatto classica</p>
               <p>Pizza in teglia alla romana</p>
@@ -188,14 +132,7 @@ export default function Home() {
               <p>Colomba</p>
             </div>
 
-            <p
-              className="text-3xl font-bold mb-8 md:mb-12"
-              style={{
-                fontFamily: "Bogart, sans-serif",
-                lineHeight: "1.4",
-                color: "#4e4e4e",
-              }}
-            >
+            <p className="text-3xl font-bold mb-8 md:mb-12">
               Ci hanno già scelto per la loro ristorazione:
             </p>
 
@@ -360,14 +297,6 @@ export default function Home() {
           <a
             href="#contact-form"
             className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block text-center"
-            style={{
-              color: "#ffffff",
-              textAlign: "center",
-              fontFamily: '"Druk Text Cyr", sans-serif',
-              fontStyle: "normal",
-              fontWeight: 500,
-              lineHeight: "1.4",
-            }}
           >
             CONTATTACI PER LA CREAZIONE DEL TUO PANIFICATO SU MISURA
           </a>
@@ -377,15 +306,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2
-            className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-12 md:mb-16 lg:mb-20"
-            style={{
-              fontFamily: '"Druk Wide", sans-serif',
-              fontWeight: 700,
-              letterSpacing: "0.07em",
-              lineHeight: "1.16em",
-            }}
-          >
+          <h2 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-12 md:mb-16 lg:mb-20">
             PERCHÈ SCEGLIERCI
           </h2>
 
@@ -396,7 +317,7 @@ export default function Home() {
               <div
                 className="text-transparent text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex-shrink-0"
                 style={{
-                  fontFamily: '"Druk Wide", sans-serif',
+                  fontFamily: "var(--font-druk-wide-cyr)",
                   fontWeight: 700,
                   lineHeight: "1",
                   WebkitTextStroke: "2px #b71918",
@@ -404,14 +325,7 @@ export default function Home() {
               >
                 1.
               </div>
-              <p
-                className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4">
                 Siamo in continuo aggiornamento seguendo corsi di alto livello.
               </p>
             </div>
@@ -421,7 +335,7 @@ export default function Home() {
               <div
                 className="text-transparent text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex-shrink-0"
                 style={{
-                  fontFamily: '"Druk Wide", sans-serif',
+                  fontFamily: "var(--font-druk-wide-cyr)",
                   fontWeight: 700,
                   lineHeight: "1",
                   WebkitTextStroke: "2px #b71918",
@@ -429,14 +343,7 @@ export default function Home() {
               >
                 2.
               </div>
-              <p
-                className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4">
                 Offrire visione moderna perché giovani.
               </p>
             </div>
@@ -446,7 +353,7 @@ export default function Home() {
               <div
                 className="text-transparent text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex-shrink-0"
                 style={{
-                  fontFamily: '"Druk Wide", sans-serif',
+                  fontFamily: "var(--font-druk-wide-cyr)",
                   fontWeight: 700,
                   lineHeight: "1",
                   WebkitTextStroke: "2px #b71918",
@@ -454,14 +361,7 @@ export default function Home() {
               >
                 3.
               </div>
-              <p
-                className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4">
                 I nostri panificati vengono scelti da numerose realtà
                 lavorative.
               </p>
@@ -472,7 +372,7 @@ export default function Home() {
               <div
                 className="text-transparent text-6xl sm:text-7xl md:text-8xl lg:text-9xl flex-shrink-0"
                 style={{
-                  fontFamily: '"Druk Wide", sans-serif',
+                  fontFamily: "var(--font-druk-wide-cyr)",
                   fontWeight: 700,
                   lineHeight: "1",
                   WebkitTextStroke: "2px #b71918",
@@ -480,14 +380,7 @@ export default function Home() {
               >
                 4.
               </div>
-              <p
-                className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] text-lg sm:text-xl md:text-2xl lg:text-3xl pt-2 md:pt-4">
                 Siamo conosciuti e supportati da realtà importanti.
               </p>
             </div>
@@ -511,16 +404,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {/* Column 1: AMBASCIATORI DI */}
             <div className="text-center">
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8">
                 AMBASCIATORI DI
               </h3>
               <div className="space-y-4">
@@ -547,16 +431,7 @@ export default function Home() {
 
             {/* Column 2: MIGLIOR PIZZERIA DI VICENZA */}
             <div className="text-center">
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8">
                 MIGLIOR PIZZERIA DI VICENZA
               </h3>
               <div className="flex justify-center">
@@ -572,16 +447,7 @@ export default function Home() {
 
             {/* Column 3: SELEZIONATI DA */}
             <div className="text-center">
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8">
                 SELEZIONATI DA
               </h3>
               <div className="space-y-4">
@@ -608,16 +474,7 @@ export default function Home() {
 
             {/* Column 4: PREMIATI DA */}
             <div className="text-center">
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8">
                 PREMIATI DA
               </h3>
               <div className="space-y-4">
@@ -651,14 +508,6 @@ export default function Home() {
           <a
             href="#contact-form"
             className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
-            style={{
-              color: "#ffffff",
-              textAlign: "center",
-              fontFamily: '"Druk Text Cyr", sans-serif',
-              fontStyle: "normal",
-              fontWeight: 500,
-              lineHeight: "1.4",
-            }}
           >
             <span className="block sm:inline">
               CONTATTACI PER LA CREAZIONE DEL
@@ -673,15 +522,7 @@ export default function Home() {
       {/* Chi Siamo Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2
-            className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-8 md:mb-12 lg:mb-16"
-            style={{
-              fontFamily: '"Druk Wide", sans-serif',
-              fontWeight: 700,
-              letterSpacing: "0.07em",
-              lineHeight: "1.16em",
-            }}
-          >
+          <h2 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-8 md:mb-12 lg:mb-16">
             CHI SIAMO
           </h2>
 
@@ -695,15 +536,7 @@ export default function Home() {
             />
           </div>
 
-          <p
-            className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto"
-            style={{
-              fontFamily: "Bogart, sans-serif",
-              fontWeight: "bold",
-              lineHeight: "1.4",
-              color: "#4e4e4e",
-            }}
-          >
+          <p className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto">
             Massimiliano e Riccardo hanno entrambi intrapreso il loro percorso
             nel mondo dell&apos;arte bianca, o panificazione, in momenti diversi
             delle loro vite, ma entrambi con una profonda passione per la cucina
@@ -714,99 +547,59 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mt-12 md:mt-16 lg:mt-20">
             {/* Column 1: MASSIMILIANO */}
             <div>
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl">
                 MASSIMILIANO
               </h3>
-              <p
-                className="text-lg sm:text-xl md:text-2xl"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                  color: "#4e4e4e",
-                }}
-              >
+              <p className="text-lg sm:text-xl md:text-2xl">
                 racconta che il suo interesse per la panificazione è nato grazie
-                all&apos;influenza di suo padre, un appassionato della buona cucina.
-                Inizialmente, iniziò a lavorare in una pizzeria con Riccardo,
-                dove si innamorò del processo di lavorazione del lievito e
-                dell&apos;impasto. Durante questo periodo frequentò corsi di
-                panificazione, tra cui quelli di Molino Quaglia con insegnanti
-                di alto livello come Simone Padoan, Francesca Morandin,
-                Massimiliano Prete e Giulia Miatto. Successivamente, lavorò in
-                diverse pizzerie e panifici e perseguì la sua passione per la
-                panificazione.
+                all&apos;influenza di suo padre, un appassionato della buona
+                cucina. Inizialmente, iniziò a lavorare in una pizzeria con
+                Riccardo, dove si innamorò del processo di lavorazione del
+                lievito e dell&apos;impasto. Durante questo periodo frequentò
+                corsi di panificazione, tra cui quelli di Molino Quaglia con
+                insegnanti di alto livello come Simone Padoan, Francesca
+                Morandin, Massimiliano Prete e Giulia Miatto. Successivamente,
+                lavorò in diverse pizzerie e panifici e perseguì la sua passione
+                per la panificazione.
               </p>
             </div>
 
             {/* Column 2: RICCARDO */}
             <div>
-              <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl">
                 RICCARDO
               </h3>
-              <p
-                className="text-lg sm:text-xl md:text-2xl"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  lineHeight: "1.4",
-                  color: "#4e4e4e",
-                }}
-              >
+              <p className="text-lg sm:text-xl md:text-2xl">
                 ha iniziato la sua carriera giovanissimo, lavorando in una
                 pizzeria vicino a casa. Ha sperimentato diverse tipologie di
                 impasto e farina, fino a diventare un esperto nel settore. Ha
                 lavorato come responsabile in vari locali e ha avviato attività
                 per altri ristoratori. Si è specializzato nella panificazione
-                tramite corsi presso l&apos;Università della Pizza e frequentando un
-                corso di specializzazione sul lievito madre e la pizza gourmet
-                con Simone Padoan, che gli ha permesso di confrontarsi con
-                grandi maestri dell&apos;arte bianca come Renato Bosco.
+                tramite corsi presso l&apos;Università della Pizza e
+                frequentando un corso di specializzazione sul lievito madre e la
+                pizza gourmet con Simone Padoan, che gli ha permesso di
+                confrontarsi con grandi maestri dell&apos;arte bianca come
+                Renato Bosco.
               </p>
             </div>
           </div>
         </div>
-        <p
-          className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto"
-          style={{
-            fontFamily: "Bogart, sans-serif",
-            fontWeight: 300,
-            lineHeight: "1.4",
-            color: "#4e4e4e",
-          }}
-        >
+        <p className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto">
           Entrambi hanno intrapreso un percorso appassionato e dedicato nel
           mondo della panificazione, imparando da esperti e specializzandosi in
           varie aree dell&apos;arte bianca.
         </p>
       </div>
-      
+
       {/* Contact Info Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
             className="text-center uppercase text-transparent text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             style={{
-              fontFamily: '"Druk Wide", sans-serif',
+              fontFamily: "var(--font-druk-wide-cyr)",
               fontWeight: 700,
-              letterSpacing: "0.07em",
-              lineHeight: "1.16em",
+              lineHeight: "1",
               WebkitTextStroke: "2px #b71918",
             }}
           >
@@ -826,27 +619,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Left Column - Company Info */}
             <div className="text-left">
-              <h3
-                className="text-[#4e4e4e] uppercase mb-4"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "18px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
+              <h3 className="text-[#4e4e4e] uppercase mb-4">
                 BACARO DELLA PIZZA SRL
               </h3>
-              <p
-                className="text-[#4e4e4e] mb-6"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  fontSize: "16px",
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] mb-6">
                 Via A. Giuriolo, 2 36100 Vicenza
               </p>
             </div>
@@ -891,24 +667,12 @@ export default function Home() {
                 <a
                   href="#"
                   className="block text-[#4e4e4e] hover:text-[#b71918] transition-colors"
-                  style={{
-                    fontFamily: "Bogart, sans-serif",
-                    fontWeight: 300,
-                    fontSize: "16px",
-                    lineHeight: "1.4",
-                  }}
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="#"
                   className="block text-[#4e4e4e] hover:text-[#b71918] transition-colors"
-                  style={{
-                    fontFamily: "Bogart, sans-serif",
-                    fontWeight: 300,
-                    fontSize: "16px",
-                    lineHeight: "1.4",
-                  }}
                 >
                   Cookie Policy
                 </a>
@@ -917,51 +681,16 @@ export default function Home() {
 
             {/* Right Column - Contact Info */}
             <div className="text-right">
-              <h3
-                className="text-[#4e4e4e] uppercase mb-4"
-                style={{
-                  fontFamily: '"Druk Wide", sans-serif',
-                  fontWeight: 700,
-                  fontSize: "18px",
-                  letterSpacing: "0.07em",
-                  lineHeight: "1.2",
-                }}
-              >
-                CONTATTACI
-              </h3>
+              <h3 className="text-[#4e4e4e] uppercase mb-4">CONTATTACI</h3>
               <div className="space-y-2 mb-4">
-                <p
-                  className="text-[#4e4e4e]"
-                  style={{
-                    fontFamily: "Bogart, sans-serif",
-                    fontWeight: 300,
-                    fontSize: "16px",
-                    lineHeight: "1.4",
-                  }}
-                >
+                <p className="text-[#4e4e4e]">
                   Riccardo <span className="font-bold">340 56 09 752</span>
                 </p>
-                <p
-                  className="text-[#4e4e4e]"
-                  style={{
-                    fontFamily: "Bogart, sans-serif",
-                    fontWeight: 300,
-                    fontSize: "16px",
-                    lineHeight: "1.4",
-                  }}
-                >
+                <p className="text-[#4e4e4e]">
                   Massimiliano <span className="font-bold">348 42 98 968</span>
                 </p>
               </div>
-              <p
-                className="text-[#4e4e4e] mb-8"
-                style={{
-                  fontFamily: "Bogart, sans-serif",
-                  fontWeight: 300,
-                  fontSize: "16px",
-                  lineHeight: "1.4",
-                }}
-              >
+              <p className="text-[#4e4e4e] mb-8">
                 mail. <span className="font-bold">info@fattoref.com</span>
               </p>
             </div>
@@ -969,15 +698,7 @@ export default function Home() {
 
           {/* Bottom Credits */}
           <div className="text-center mt-12 pt-8 border-t border-gray-200">
-            <p
-              className="text-gray-500"
-              style={{
-                fontFamily: "Bogart, sans-serif",
-                fontWeight: 300,
-                fontSize: "14px",
-                lineHeight: "1.4",
-              }}
-            >
+            <p className="text-gray-500">
               Created by <span className="font-bold">Yard Studio</span>
             </p>
           </div>
@@ -985,4 +706,4 @@ export default function Home() {
       </footer>
     </>
   );
-} 
+}

@@ -1,17 +1,61 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const bogartSans = localFont({
+  src: [
+    {
+      path: "./fonts/Bogart-normal-300-100.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Bogart-normal-400-100.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Bogart-normal-700-100.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-bogart-sans",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const drukWideCyr = localFont({
+  src: [
+    {
+      path: "./fonts/Druk-Wide-Bold-normal-400-100.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Druk-Wide-Cyr-normal-700-100.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-druk-wide-cyr",
 });
+
+const drukTextCyr = localFont({
+  src: [
+    {
+      path: "./fonts/Druk-Text-Cyr-normal-400-100.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Druk-Text-Cyr-normal-300-100.woff2",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-druk-text-cyr",
+});
+
 
 export const metadata: Metadata = {
   title: "Fattore F Bakery - Prodotti Lievitati per Ristorazione | Miglior Pizzeria Vicenza 2023",
@@ -51,9 +95,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${bogartSans.variable} ${drukWideCyr.variable} ${drukTextCyr.variable} antialiased`}
       >
         <Header />
         {children}

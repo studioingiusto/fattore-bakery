@@ -71,7 +71,6 @@ export default function ContactForm() {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-[#b71918] focus:border-transparent transition-colors"
-                style={{ fontFamily: "Bogart, sans-serif" }}
               />
             </div>
 
@@ -79,7 +78,6 @@ export default function ContactForm() {
               <label 
                 htmlFor="email" 
                 className="block text-sm font-medium text-[#4e4e4e] mb-2"
-                style={{ fontFamily: "Bogart, sans-serif" }}
               >
                 Email *
               </label>
@@ -111,7 +109,6 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-[#b71918] focus:border-transparent transition-colors"
-              style={{ fontFamily: "Bogart, sans-serif" }}
             />
           </div>
 
@@ -119,7 +116,6 @@ export default function ContactForm() {
             <label 
               htmlFor="message" 
               className="block text-sm font-medium text-[#4e4e4e] mb-2"
-              style={{ fontFamily: "Bogart, sans-serif" }}
             >
               Messaggio *
             </label>
