@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export default function Home() {
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden pt-32">
+      <div className="relative w-full h-screen overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -19,7 +19,7 @@ export default function Home() {
         </div>
 
         {/* Hero Text */}
-        <div className="relative z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="relative z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
           <h1
             className="text-white text-center uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
             style={{
@@ -91,8 +91,9 @@ export default function Home() {
             </div>
 
             {/* Call to action button */}
-            <button
-              className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            <a
+              href="#contact-form"
+              className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
               style={{
                 color: "#ffffff",
                 textAlign: "center",
@@ -108,7 +109,7 @@ export default function Home() {
               <span className="block sm:inline sm:ml-2">
                 TUO PANIFICATO SU MISURA
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -356,8 +357,9 @@ export default function Home() {
       {/* Bottom CTA */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <button
-            className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+          <a
+            href="#contact-form"
+            className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block text-center"
             style={{
               color: "#ffffff",
               textAlign: "center",
@@ -368,7 +370,7 @@ export default function Home() {
             }}
           >
             CONTATTACI PER LA CREAZIONE DEL TUO PANIFICATO SU MISURA
-          </button>
+          </a>
         </div>
       </div>
 
@@ -646,8 +648,9 @@ export default function Home() {
       {/* Final CTA */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <button
-            className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+          <a
+            href="#contact-form"
+            className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
             style={{
               color: "#ffffff",
               textAlign: "center",
@@ -663,7 +666,7 @@ export default function Home() {
             <span className="block sm:inline sm:ml-2">
               TUO PANIFICATO SU MISURA
             </span>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -712,11 +715,10 @@ export default function Home() {
             {/* Column 1: MASSIMILIANO */}
             <div>
               <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
+                className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl"
                 style={{
                   fontFamily: '"Druk Wide", sans-serif',
                   fontWeight: 700,
-                  fontSize: "32px",
                   letterSpacing: "0.07em",
                   lineHeight: "1.2",
                 }}
@@ -748,11 +750,10 @@ export default function Home() {
             {/* Column 2: RICCARDO */}
             <div>
               <h3
-                className="text-[#b71918] uppercase mb-6 md:mb-8"
+                className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl"
                 style={{
                   fontFamily: '"Druk Wide", sans-serif',
                   fontWeight: 700,
-                  fontSize: "32px",
                   letterSpacing: "0.07em",
                   lineHeight: "1.2",
                 }}
@@ -800,7 +801,7 @@ export default function Home() {
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
-            className="text-center uppercase text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+            className="text-center uppercase text-transparent text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             style={{
               fontFamily: '"Druk Wide", sans-serif',
               fontWeight: 700,
@@ -815,7 +816,9 @@ export default function Home() {
       </div>
 
       {/* Contact Form Section */}
-      <ContactForm />
+      <div id="contact-form">
+        <ContactForm />
+      </div>
 
       {/* Footer */}
       <footer className="bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8">
