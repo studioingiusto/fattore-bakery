@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
 import localFont from "next/font/local";
 import Image from "next/image";
 
@@ -57,10 +56,11 @@ const drukTextCyr = localFont({
   variable: "--font-druk-text-cyr",
 });
 
-
 export const metadata: Metadata = {
-  title: "Fattore F Bakery - Prodotti Lievitati per Ristorazione | Miglior Pizzeria Vicenza 2023",
-  description: "Fattore F Bakery: forniamo prodotti lievitati di alta qualità per attività di ristorazione. Pizza, focaccia, pane, panettone su misura. Consulenza gratuita. Premiati come miglior pizzeria di Vicenza 2023.",
+  title:
+    "Fattore F Bakery - Prodotti Lievitati per Ristorazione | Miglior Pizzeria Vicenza 2023",
+  description:
+    "Fattore F Bakery: forniamo prodotti lievitati di alta qualità per attività di ristorazione. Pizza, focaccia, pane, panettone su misura. Consulenza gratuita. Premiati come miglior pizzeria di Vicenza 2023.",
   icons: {
     icon: [
       {
@@ -101,13 +101,13 @@ export default function RootLayout({
         className={`${bogartSans.variable} ${drukWideCyr.variable} ${drukTextCyr.variable} antialiased`}
       >
         <Image
-              src="https://fattoref.com/wp-content/uploads/2023/11/FB-logo-B.png"
-              alt="Fattore F Bakery"
-              width={200}
-              height={125}
-              className="h-[125px] w-auto fixed top-0 left-0 right-0 z-[9999] mix-blend-difference invert"
-              priority
-            />
+          src="https://fattoref.com/wp-content/uploads/2023/11/FB-logo-B.png"
+          alt="Fattore F Bakery"
+          width={200}
+          height={125}
+          className="h-[125px] w-auto fixed top-0 left-0 right-0 z-[9999] mix-blend-difference invert"
+          priority
+        />
         {children}
       </body>
     </html>
