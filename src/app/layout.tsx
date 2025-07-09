@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import localFont from "next/font/local";
+import Image from "next/image";
 
 const bogartSans = localFont({
   src: [
@@ -99,7 +100,14 @@ export default function RootLayout({
       <body
         className={`${bogartSans.variable} ${drukWideCyr.variable} ${drukTextCyr.variable} antialiased`}
       >
-        <Header />
+        <Image
+              src="https://fattoref.com/wp-content/uploads/2023/11/FB-logo-B.png"
+              alt="Fattore F Bakery"
+              width={200}
+              height={125}
+              className="h-[125px] w-auto fixed top-0 left-0 right-0 z-[9999] mix-blend-difference invert"
+              priority
+            />
         {children}
       </body>
     </html>

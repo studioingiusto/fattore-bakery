@@ -1,12 +1,72 @@
+'use client';
+
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import { useEffect, useRef, useState } from "react";
+
+// Hook personalizzato per gestire l'animazione reveal
+function useRevealAnimation() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, isVisible };
+}
+
+// Componente per singola immagine con animazione
+function RevealImage({ src, alt, delay = 0 }: { src: string; alt: string; delay?: number }) {
+  const { ref, isVisible } = useRevealAnimation();
+
+  return (
+    <div
+      ref={ref}
+      className={`transform transition-all duration-[1200ms] ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-8 scale-95'
+      }`}
+      style={{
+        transitionDelay: `${delay}ms`
+      }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={320}
+        height={240}
+        className="object-cover w-full h-[240px] rounded-lg hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <>
+      {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black">
           <Image
             src="https://fattoref.com/wp-content/uploads/2023/10/fattore-f-bakery-scaled.jpg"
             alt="Artisanal bread loaves on dark background"
@@ -27,7 +87,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h-screen flex flex-col max-w-7xl mx-auto md:flex-row justify-center items-center md:items-stretch py-8 md:py-0">
+      {/* Main Content Section */}
+      <div className="min-h-screen flex flex-col max-w-5xl mx-auto md:flex-row justify-center items-center md:items-stretch py-8 md:py-0">
         {/* Left side - Bread image */}
         <div className="w-full md:max-w-[510px] flex items-center justify-center p-4 sm:p-6 md:p-8 md:pr-12 lg:pr-24">
           <div className="max-w-sm md:max-w-md lg:max-w-lg">
@@ -80,7 +141,7 @@ export default function Home() {
 
       {/* Awards Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h3 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="text-[#b71918]">FATTORE F</span>{" "}
             <span className="text-[#4e4e4e]">È STATA VOTATA COME</span>{" "}
@@ -229,63 +290,47 @@ export default function Home() {
 
       {/* Lab Photos Gallery */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-1-scaled.webp"
               alt="Fattore F Lab 1"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={0}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-2-e1695893472916.webp"
               alt="Fattore F Lab 2"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={200}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-3-scaled-e1695893327694.webp"
               alt="Fattore F Lab 3"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={400}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-4-scaled.webp"
               alt="Fattore F Lab 4"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={600}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-5-scaled-e1695893356886.webp"
               alt="Fattore F Lab 5"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={800}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-6-scaled-e1695893385722.webp"
               alt="Fattore F Lab 6"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={1000}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-7.webp"
               alt="Fattore F Lab 7"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={1200}
             />
-            <Image
+            <RevealImage
               src="https://fattoref.com/wp-content/uploads/2023/09/fattore_f_lab-8-scaled.webp"
               alt="Fattore F Lab 8"
-              width={320}
-              height={240}
-              className="object-cover w-full h-[240px] rounded-lg"
+              delay={1400}
             />
           </div>
         </div>
@@ -293,7 +338,7 @@ export default function Home() {
 
       {/* Bottom CTA */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <a
             href="#contact-form"
             className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block text-center"
@@ -305,7 +350,7 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-12 md:mb-16 lg:mb-20">
             PERCHÈ SCEGLIERCI
           </h2>
@@ -400,7 +445,7 @@ export default function Home() {
 
       {/* Awards and Partnerships Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {/* Column 1: AMBASCIATORI DI */}
             <div className="text-center">
@@ -504,7 +549,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <a
             href="#contact-form"
             className="bg-[#b71918] text-[#ffffff] px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 font-bold uppercase leading-tight hover:bg-opacity-90 transition-colors w-full md:w-auto text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl inline-block"
@@ -521,7 +566,7 @@ export default function Home() {
 
       {/* Chi Siamo Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-center uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#b71918] mb-8 md:mb-12 lg:mb-16">
             CHI SIAMO
           </h2>
@@ -593,7 +638,7 @@ export default function Home() {
 
       {/* Contact Info Section */}
       <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2
             className="text-center uppercase text-transparent text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             style={{
@@ -615,7 +660,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-white py-12 md:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Left Column - Company Info */}
             <div className="text-left">
