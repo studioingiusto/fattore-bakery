@@ -44,7 +44,6 @@ function useParallax() {
         const rect = ref.current.getBoundingClientRect();
         const scrolled = window.pageYOffset;
         const elementTop = ref.current.offsetTop;
-        const elementHeight = ref.current.offsetHeight;
         const windowHeight = window.innerHeight;
         
         // Calcola l'offset solo quando l'elemento è visibile
@@ -91,12 +90,11 @@ function RevealImage({ src, alt, delay = 0 }: { src: string; alt: string; delay?
 }
 
 // Componente per immagine con effetto parallasse
-function ParallaxImage({ src, alt, width, height, className }: { 
+function ParallaxImage({ src, alt, width, height }: { 
   src: string; 
   alt: string; 
   width: number; 
   height: number; 
-  className?: string; 
 }) {
   const { ref, offsetY } = useParallax();
 
@@ -643,7 +641,6 @@ export default function Home() {
               alt="Riccardo - Fattore Bakery"
               width={800}
               height={420}
-              className="w-full max-h-[420px] object-cover rounded-lg"
             />
           </div>
 
