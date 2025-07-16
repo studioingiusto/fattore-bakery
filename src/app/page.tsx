@@ -33,6 +33,36 @@ function useRevealAnimation() {
   return { ref, isVisible };
 }
 
+// Hook personalizzato per gestire l'effetto parallasse
+function useParallax() {
+  const [offsetY, setOffsetY] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const scrolled = window.pageYOffset;
+        const elementTop = ref.current.offsetTop;
+        const elementHeight = ref.current.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        // Calcola l'offset solo quando l'elemento è visibile
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const rate = (scrolled - elementTop) * 0.5;
+          setOffsetY(rate);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Esegui subito per inizializzare
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return { ref, offsetY };
+}
+
 // Componente per singola immagine con animazione
 function RevealImage({ src, alt, delay = 0 }: { src: string; alt: string; delay?: number }) {
   const { ref, isVisible } = useRevealAnimation();
@@ -55,6 +85,42 @@ function RevealImage({ src, alt, delay = 0 }: { src: string; alt: string; delay?
         width={320}
         height={240}
         className="object-cover w-full h-[240px] rounded-lg hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+  );
+}
+
+// Componente per immagine con effetto parallasse
+function ParallaxImage({ src, alt, width, height, className }: { 
+  src: string; 
+  alt: string; 
+  width: number; 
+  height: number; 
+  className?: string; 
+}) {
+  const { ref, offsetY } = useParallax();
+
+  return (
+    <div
+      ref={ref}
+      className="relative overflow-hidden rounded-lg"
+      style={{
+        width: '100%',
+        maxWidth: '800px',
+        height: '420px',
+      }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full h-full object-cover"
+        style={{
+          transform: `translateY(${offsetY * 0.3}px)`,
+          transition: 'transform 0.1s ease-out',
+          minHeight: '120%',
+        }}
       />
     </div>
   );
@@ -572,9 +638,9 @@ export default function Home() {
           </h2>
 
           <div className="flex justify-center">
-            <Image
-              src="https://fattoref.com/wp-content/uploads/2023/04/perche-fattoref-scaled.jpg"
-              alt="Chi siamo - Fattore F"
+            <ParallaxImage
+              src="http://fattoref.com/wp-content/uploads/2025/07/riccardo-fattore-bakery.jpg"
+              alt="Riccardo - Fattore Bakery"
               width={800}
               height={420}
               className="w-full max-h-[420px] object-cover rounded-lg"
@@ -582,35 +648,12 @@ export default function Home() {
           </div>
 
           <p className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto">
-            Massimiliano e Riccardo hanno entrambi intrapreso il loro percorso
-            nel mondo dell&apos;arte bianca, o panificazione, in momenti diversi
-            delle loro vite, ma entrambi con una profonda passione per la cucina
-            e la panificazione.
+            Riccardo ha intrapreso il suo percorso nel mondo dell&apos;arte bianca, o panificazione, con una profonda passione per la cucina e la panificazione.
           </p>
 
-          {/* Two Columns Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mt-12 md:mt-16 lg:mt-20">
-            {/* Column 1: MASSIMILIANO */}
-            <div>
-              <h3 className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl">
-                MASSIMILIANO
-              </h3>
-              <p className="text-lg sm:text-xl md:text-2xl">
-                racconta che il suo interesse per la panificazione è nato grazie
-                all&apos;influenza di suo padre, un appassionato della buona
-                cucina. Inizialmente, iniziò a lavorare in una pizzeria con
-                Riccardo, dove si innamorò del processo di lavorazione del
-                lievito e dell&apos;impasto. Durante questo periodo frequentò
-                corsi di panificazione, tra cui quelli di Molino Quaglia con
-                insegnanti di alto livello come Simone Padoan, Francesca
-                Morandin, Massimiliano Prete e Giulia Miatto. Successivamente,
-                lavorò in diverse pizzerie e panifici e perseguì la sua passione
-                per la panificazione.
-              </p>
-            </div>
-
-            {/* Column 2: RICCARDO */}
-            <div>
+          {/* Single Column Section - Riccardo */}
+          <div className="flex justify-center mt-12 md:mt-16 lg:mt-20">
+            <div className="max-w-4xl text-center">
               <h3 className="text-[#b71918] uppercase mb-6 md:mb-8 text-xl sm:text-2xl md:text-3xl">
                 RICCARDO
               </h3>
@@ -630,9 +673,7 @@ export default function Home() {
           </div>
         </div>
         <p className="text-center mt-8 md:mt-12 lg:mt-16 text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-5xl mx-auto">
-          Entrambi hanno intrapreso un percorso appassionato e dedicato nel
-          mondo della panificazione, imparando da esperti e specializzandosi in
-          varie aree dell&apos;arte bianca.
+          Ha intrapreso un percorso appassionato e dedicato nel mondo della panificazione, imparando da esperti e specializzandosi in varie aree dell&apos;arte bianca.
         </p>
       </div>
 
