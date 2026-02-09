@@ -769,9 +769,6 @@ export default function Home() {
                 <p className="text-[#4e4e4e]">
                   Riccardo <span className="font-bold">340 56 09 752</span>
                 </p>
-                <p className="text-[#4e4e4e]">
-                  Massimiliano <span className="font-bold">348 42 98 968</span>
-                </p>
               </div>
               <p className="text-[#4e4e4e] mb-8">
                 mail. <span className="font-bold">info@fattoref.com</span>
